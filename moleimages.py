@@ -51,6 +51,16 @@ class MoleImages():
         with h5py.File(filename, 'r') as hf:
             return hf[dataset][:]
 
+    def save_png(self, matrix, dir, tag='img', format='png'):
+        for i, img in enumerate(matrix):
+            if dir[-1] != '/':
+                filename = dir + '/' + tag + str(i) + '.' + format
+            else:
+                filename = dir + tag + str(i) + '.' + format
+            print('Saving file {}'.format(filename))
+            io.imsave(filename, img)
+
+
 
 if __name__ == '__main__':
     # benign = MoleImages('data/malignant/*.jpg')
