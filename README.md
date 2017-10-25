@@ -13,4 +13,5 @@ on the skin.
 ## First Model: CNN from scratch
 My first try is to construct a simple Convolutional Neural Network with 3 layers.
 The results obtained until now can be shown on the ROC curve presented below:
+
 ![](ROC Curve CNN from scratch.png?raw=true)
