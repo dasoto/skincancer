@@ -58,6 +58,7 @@ As summary the total images to use are:
 | Benign Images     | Malign Images     |
 | :------------- | :------------- |
 | 1208       | 849       |
+
 Some sample images are shown below:
 1. Sample images of benign moles:
 
@@ -132,14 +133,6 @@ Simple Convolutional Neural Network with 3 layers.
 The results obtained until now can be shown on the ROC curve presented below:
 
 ![](ROC%20Curve%20CNN%20from%20scratch.png?raw=true)
-
-Outline:
-• How you will get the data, what it looks like, and what kind of munging/preprocessing you
-will need to do
-• High level description of analysis you plan to do
-• Tools you will use
-• How you plan to present results (web app, blog, nice README, presentation, poster)
-• High level timeline for project stages
 
 ### 7. Next Steps
 TBD
