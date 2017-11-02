@@ -1,5 +1,5 @@
 from keras import optimizers
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras.preprocessing.image import ImageDataGenerator
@@ -104,6 +104,13 @@ class CNN():
     def predict(self, X):
         return self.model.predict(X)
 
+    def save_model(self, filename='model_save.h5'):
+        self.model.save(filename)
+        print('Model saved to: ', filename)
+
+    def load_model(self, filename):
+        self.model = load_model(filename)
+        print('Model Loaded: ', filename)
 
 if __name__ == '__main__':
     pass
