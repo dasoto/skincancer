@@ -5,13 +5,13 @@ from keras.layers import Dropout, Flatten, Dense
 from keras import applications
 
 # dimensions of our images.
-img_width, img_height = 150, 150
+img_width, img_height = 128, 128
 
 top_model_weights_path = 'models/bottleneck_fc_model.h5'
 train_data_dir = 'data_scaled'
 validation_data_dir = 'data_scaled_validation'
-nb_train_samples = 1763
-nb_validation_samples = 194
+nb_train_samples = 1760 #1763
+nb_validation_samples = 192 #194
 epochs = 50
 batch_size = 16
 
