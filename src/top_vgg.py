@@ -46,7 +46,7 @@ def save_bottlebeck_features():
 
 
 def train_top_model():
-    train_data = np.load(open('/models/bottleneck_features_train.npy'))
+    train_data = np.load(open('models/bottleneck_features_train.npy'))
     train_labels = np.array(
         [0] * (nb_train_samples / 2) + [1] * (nb_train_samples / 2))
 
