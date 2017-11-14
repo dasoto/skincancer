@@ -62,7 +62,7 @@ As summary the total images to use are:
 Some sample images are shown below:
 1. Sample images of benign moles:
 
-  ![](test.png?raw=true)
+  ![](/Users/David/galvanize/CProposal/skincancer/test.png?raw=true)
 
 - Sample images of malign moles:
 
