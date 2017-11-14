@@ -60,11 +60,11 @@ As summary the total images to use are:
 Some sample images are shown below:
 1. Sample images of benign moles:
 
-  ![](test.png?raw=true)
+  ![](images/test.png?raw=true)
 
 - Sample images of malign moles:
 
-  ![](test-2.png?raw=true)
+  ![](images/test-2.png?raw=true)
 
 #### 2.2 Preprocessing:
 The following preprocessing tasks are developed for each image:
@@ -130,7 +130,7 @@ model predictions can be done through the pre-trained model loaded into the iPho
 Simple Convolutional Neural Network with 3 layers.
 The results obtained until now can be shown on the ROC curve presented below:
 
-![](ROC%20Curve%20CNN%20from%20scratch.png?raw=true)
+![](images/ROC%20Curve%20CNN%20from%20scratch.png?raw=true)
 
 ### 7. Next Steps
 TBD
