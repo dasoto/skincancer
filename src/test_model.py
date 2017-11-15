@@ -4,7 +4,7 @@ from cnn_model import CNN
 from moleimages import MoleImages
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
-<<<<<<< HEAD
+
 import matplotlib
 matplotlib.use('GTKAgg')
 import matplotlib.pyplot as plt
@@ -15,14 +15,14 @@ def plot_roc(y_test, y_score, title='ROC Curve'):
     fpr, tpr, _ = roc_curve(y_test, y_score)
     roc_auc = auc(fpr, tpr)
     print(roc_auc)
-=======
+
 import matplotlib.pyplot as plt
 import sys
 
 def plot_roc(y_test, y_score, title='ROC Curve'):
     fpr, tpr, _ = roc_curve(y_test, y_score)
     roc_auc = auc(fpr, tpr)
->>>>>>> 09bbf5719713834c06e10c2e10afa64e85e0c64c
+
     plt.figure()
     lw = 2
     plt.plot(fpr, tpr, color='darkorange',
@@ -54,4 +54,3 @@ if __name__ == '__main__':
         plot_roc(y_test, y_pred_proba, title=sys.argv[1]+sys.argv[2])
     else:
         print('use python src/test_model.py models/model.h5 title')
-        
