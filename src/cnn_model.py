@@ -88,7 +88,7 @@ class CNN():
                         n_validation, nb_epoch=10, batch_size=50):
         self.model.fit_generator(
             train_generator,
-            steps_per_epoch=n_samples//batch_size,
+            steps_per_epoch=n_samples//batch_size*,
             epochs=nb_epoch,
             verbose=1,
             validation_data=validation_generator,
