@@ -85,7 +85,7 @@ class CNN():
         print('Test accuracy:', score[1]) # this is the one we care about
 
     def fit_generator(self, train_generator, validation_generator, n_samples,
-                        n_validation, nb_epoch=10, batch_size=50):
+                        n_validation, nb_epoch=10, batch_size=50, callbacks=None):
         self.model.fit_generator(
             train_generator,
             steps_per_epoch=n_samples//batch_size,
@@ -94,7 +94,8 @@ class CNN():
             validation_data=validation_generator,
             validation_steps=n_validation//batch_size,
             use_multiprocessing=True,
-            workers=1)
+            workers=1,
+            callbacks = callbacks)
 
         #score = self.model.evaluate(X_test, Y_test, verbose=0)
         #print('Test score:', score[0])

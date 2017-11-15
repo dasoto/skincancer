@@ -1,4 +1,5 @@
 from keras.preprocessing.image import ImageDataGenerator
+from keras.callbacks import EarlyStopping, ModelCheckpoint
 from cnn_model import CNN
 from moleimages import MoleImages
 from sklearn.metrics import classification_report
@@ -56,8 +57,15 @@ if __name__ == '__main__':
         batch_size=batch_size,
         class_mode='binary')
 
+    best_model_VA = ModelCheckpoint('BM_VA_'+sys.argv[1],monitor='val_acc',
+                                    mode = 'max', verbose=1, save_best_only=True)
+    best_model_VL = ModelCheckpoint('BM_VL_'+sys.argv[1],monitor='val_loss',
+                                    mode = 'min', verbose=1, save_best_only=True)
+
+
     model = mycnn.fit_generator(train_generator,validation_generator,
-        10*nb_train_samples, nb_validation_samples, epochs, batch_size)
+        10*nb_train_samples, nb_validation_samples, epochs, batch_size,
+        callbacks=[best_model_VA, best_model_VL])
 
     model.save(sys.argv[1])
     #y_pred_proba = model.predict(X_test)
