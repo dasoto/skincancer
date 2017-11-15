@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
 
 import matplotlib
-matplotlib.use('GTKAgg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import sys
 
@@ -22,7 +22,7 @@ import sys
 def plot_roc(y_test, y_score, title='ROC Curve'):
     fpr, tpr, _ = roc_curve(y_test, y_score)
     roc_auc = auc(fpr, tpr)
-
+    print(roc_auc)
     plt.figure()
     lw = 2
     plt.plot(fpr, tpr, color='darkorange',
