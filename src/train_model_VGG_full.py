@@ -48,7 +48,7 @@ model = Model(input= model.input, output= top_model(model.output))
 # compile the model with a SGD/momentum optimizer
 # and a very slow learning rate.
 model.compile(loss='binary_crossentropy',
-              optimizer='adams',   #optimizers.SGD(lr=1e-4, momentum=0.9)
+              optimizer='adam',   #optimizers.SGD(lr=1e-4, momentum=0.9)
               metrics=['accuracy'])
 
 # prepare data augmentation configuration
