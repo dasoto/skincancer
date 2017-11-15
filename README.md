@@ -154,5 +154,19 @@ The results obtained until now can be shown on the ROC curve presented below:
 |1.0 |      0.91 |     0.86 |     0.89 |       50|
 |avg / total |      0.89 |     0.89 |     0.89   |    100 |
 
+##### Classification Report VGG16 + Dense Layer.
+- Model_name = models/VGG-Full.hdf5
+- 100 epochs.ModelCheckpoint. Best Val Accuracy
+- AUC: 0.93
+
+|class |precision   | recall  |f1-score  | support|
+|:-----|:-----------|:--------|:---------|:-------|
+|0.0    |   0.82      |0.94      |0.88   |     50 |
+|1.0    |   0.93    |  0.80    |  0.86   |     50 |
+|avg / total|  0.88 |     0.87 |     0.87|    100  |
+
+0.93
+
+
 ### 7. Next Steps
 TBD
