@@ -1,3 +1,4 @@
+from keras.models import Model
 from keras import applications
 from keras.preprocessing.image import ImageDataGenerator
 from keras import optimizers
@@ -6,7 +7,7 @@ from keras.layers import Dropout, Flatten, Dense
 
 # path to the model weights files.
 #weights_path = '../keras/examples/vgg16_weights.h5'
-top_model_weights_path = 'bottleneck_fc_model.h5'
+top_model_weights_path = 'models/bottleneck_fc_model.h5'
 # dimensions of our images.
 img_width, img_height = 128, 128
 
@@ -18,7 +19,8 @@ epochs = 100
 batch_size = 16
 
 # build the VGG16 network
-model = applications.VGG16(weights='imagenet', include_top=False)
+model = applications.VGG16(weights='imagenet', include_top=False,
+                           input_shape=(128, 128, 3))
 print('Model loaded.')
 
 # build a classifier model to put on top of the convolutional model
@@ -34,7 +36,8 @@ top_model.add(Dense(1, activation='sigmoid'))
 top_model.load_weights(top_model_weights_path)
 
 # add the model on top of the convolutional base
-model.add(top_model)
+#model.add(top_model)
+model = Model(input= model.input, output= top_model(model.output))
 
 # set the first 25 layers (up to the last conv block)
 # to non-trainable (weights will not be updated)
@@ -49,12 +52,13 @@ model.compile(loss='binary_crossentropy',
 
 # prepare data augmentation configuration
 train_datagen = ImageDataGenerator(
-    rescale=1. / 255,
-    shear_range=0.2,
-    zoom_range=0.2,
-    horizontal_flip=True)
+    #rescale=1. / 255,
+    #shear_range=0.2,
+    #zoom_range=0.2,
+    horizontal_flip=True,
+    vertical_flip=True)
 
-test_datagen = ImageDataGenerator(rescale=1. / 255)
+test_datagen = ImageDataGenerator()
 
 train_generator = train_datagen.flow_from_directory(
     train_data_dir,
