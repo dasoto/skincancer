@@ -4,6 +4,8 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras import optimizers
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
+from keras.callbacks import EarlyStopping, ModelCheckpoint
+
 
 # path to the model weights files.
 #weights_path = '../keras/examples/vgg16_weights.h5'

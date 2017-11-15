@@ -4,7 +4,9 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras import optimizers
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
+from keras.callbacks import EarlyStopping, ModelCheckpoint
 import sys
+
 
 # path to the model weights files.
 #weights_path = '../keras/examples/vgg16_weights.h5'
@@ -74,12 +76,18 @@ validation_generator = test_datagen.flow_from_directory(
     class_mode='binary')
 
 # fine-tune the model
+best_model_VA = ModelCheckpoint('BM_VA_'+sys.argv[1],monitor='val_accuracy',
+                                mode = 'max')
+best_model_VL = ModelCheckpoint('BM_VL_'+sys.argv[1],monitor='val_loss',
+                                mode = 'min')
+
+
 model.fit_generator(
     train_generator,
     samples_per_epoch=nb_train_samples,
     epochs=epochs,
     validation_data=validation_generator,
-    nb_val_samples=nb_validation_samples)
+    nb_val_samples=nb_validation_samples, callbacks=[best_model_VA,best_model_VL])
 
 print('saving model...',sys.argv[1])
 model.save(sys.argv[1])
