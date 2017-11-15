@@ -4,7 +4,6 @@ from moleimages import MoleImages
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
-import sys
 
 def plot_roc(y_test, y_score, title='ROC Curve'):
     fpr, tpr, _ = roc_curve(y_test, y_score)
@@ -33,9 +32,9 @@ if __name__ == '__main__':
     epochs = 100
     batch_size = 16
 
-    #mimg = MoleImages()
-    #X_test, y_test = mimg.load_test_images('data_scaled_test/benign',
-    #                                        'data_scaled_test/malign')
+    mimg = MoleImages()
+    X_test, y_test = mimg.load_test_images('data_scaled_test/benign',
+                                            'data_scaled_test/malign')
 
     mycnn = CNN()
     train_datagen = ImageDataGenerator(
@@ -58,8 +57,8 @@ if __name__ == '__main__':
     model = mycnn.fit_generator(train_generator,validation_generator,
         nb_train_samples, nb_validation_samples, epochs, batch_size)
 
-    model.save(sys.argv[1])
-    #y_pred_proba = model.predict(X_test)
-    #y_pred = (y_pred_proba >0.5)*1
-    #print(classification_report(y_test,y_pred))
-    #plot_roc(y_test, y_pred_proba, title='ROC Curve CNN from scratch')
+    model.save('models/mymodel-3.h5')
+    y_pred_proba = model.predict(X_test)
+    y_pred = (y_pred_proba >0.5)*1
+    print(classification_report(y_test,y_pred))
+    plot_roc(y_test, y_pred_proba, title='ROC Curve CNN from scratch')
