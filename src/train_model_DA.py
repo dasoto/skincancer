@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     mycnn = CNN()
     train_datagen = ImageDataGenerator(
-    rotation_range=180
+    rotation_range=180,
     vertical_flip=True,
     horizontal_flip=True)
     test_datagen = ImageDataGenerator()
