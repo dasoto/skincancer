@@ -131,6 +131,25 @@ Simple Convolutional Neural Network with 3 layers.
 The results obtained until now can be shown on the ROC curve presented below:
 
 ![](images/ROC%20Curve%20CNN%20from%20scratch.png?raw=true)
+##### Classification Report CNN From scratch, no data augmentation.
+0.9164
+precision    recall  f1-score   support
+
+0.0       0.82      0.84      0.83        50
+1.0       0.84      0.82      0.83        50
+
+avg / total       0.83      0.83      0.83       100
+
+
+##### Classification Report VGG16 + Dense Layer. Training last layers.
+
+AUC: 0.9244
+precision    recall  f1-score   support
+
+0.0       0.82      0.92      0.87        50
+1.0       0.91      0.80      0.85        50
+
+avg / total       0.87      0.86      0.86       100
 
 ### 7. Next Steps
 TBD
