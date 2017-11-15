@@ -76,10 +76,10 @@ validation_generator = test_datagen.flow_from_directory(
     class_mode='binary')
 
 # fine-tune the model
-best_model_VA = ModelCheckpoint('BM_VA_'+sys.argv[1],monitor='val_accuracy',
-                                mode = 'max')
+best_model_VA = ModelCheckpoint('BM_VA_'+sys.argv[1],monitor='val_acc',
+                                mode = 'max', verbose=1, save_best_only=True)
 best_model_VL = ModelCheckpoint('BM_VL_'+sys.argv[1],monitor='val_loss',
-                                mode = 'min')
+                                mode = 'min', verbose=1, save_best_only=True)
 
 
 model.fit_generator(
