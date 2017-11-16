@@ -155,7 +155,7 @@ The results obtained until now can be shown on the ROC curve presented below:
 |avg / total |      0.89 |     0.89 |     0.89   |    100 |
 
 ##### Classification Report VGG16 + Dense Layer.
-- Model_name = models/VGG-Full.hdf5
+- Model_name = models/BM_VA_VGG_FULL_2.hdf5
 - 100 epochs.ModelCheckpoint. Best Val Accuracy
 - AUC: 0.93
 
@@ -165,7 +165,18 @@ The results obtained until now can be shown on the ROC curve presented below:
 |1.0    |   0.93    |  0.80    |  0.86   |     50 |
 |avg / total|  0.88 |     0.87 |     0.87|    100  |
 
-0.93
+##### Classification Report CNN Scratch with Data Augmentation.
+- Model_name = models/CNN-Scratch-DA
+- 100 epochs.ModelCheckpoint. Best Val Accuracy
+- AUC: 0.9444
+
+
+| class | precision | recall  | f1-score  | support |
+|:----- |:-----     | :--     |:--        |:--      |
+| 0.0   | 0.81      | 0.96    |  0.88     |    50   |
+| 1.0   | 0.95      | 0.78    | 0.86      |   50    |
+|avg / total|0.88   | 0.87    |0.87       |100      |
+
 
 
 ### 7. Next Steps

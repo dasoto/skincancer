@@ -55,9 +55,7 @@ model.compile(loss='binary_crossentropy',
 
 # prepare data augmentation configuration
 train_datagen = ImageDataGenerator(
-    #rescale=1. / 255,
-    #shear_range=0.2,
-    #zoom_range=0.2,
+    rotation_range=180,
     horizontal_flip=True,
     vertical_flip=True)
 
@@ -84,7 +82,7 @@ best_model_VL = ModelCheckpoint('BM_VL_'+sys.argv[1],monitor='val_loss',
 
 model.fit_generator(
     train_generator,
-    samples_per_epoch=nb_train_samples,
+    samples_per_epoch=nb_train_samples*10,
     epochs=epochs,
     validation_data=validation_generator,
     nb_val_samples=nb_validation_samples, callbacks=[best_model_VA,best_model_VL])
