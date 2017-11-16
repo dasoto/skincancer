@@ -178,6 +178,20 @@ The results obtained until now can be shown on the ROC curve presented below:
 |avg / total|0.88   | 0.87    |0.87       |100      |
 
 
+##### Classification Report VGG16 with Data Augmentation.
+- Model_name = models/BM_VA_VGG_FULL_DA.hdf5
+- 100 epochs.ModelCheckpoint. Best Val Accuracy
+- AUC: 0.9612
+
+
+| class | precision | recall  | f1-score  | support |
+|:----- |:-----     | :--     |:--        |:--      |
+| 0.0   | 0.88      | 0.88    |  0.88     |    50   |
+| 1.0   | 0.88      | 0.88    | 0.88      |   50    |
+|avg / total|0.88   | 0.88    |0.88       |100      |
+
+
+
 
 ### 7. Next Steps
 TBD
