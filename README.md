@@ -102,6 +102,7 @@ model predictions can be done through the pre-trained model loaded into the iPho
   **3. Android App:** (Optional if time allow it)
 
 ### 4. Project Schedule
+
 | Activity       | Days           | Current Status | Progress |
 | :------------- | :------------- | :------------- | :--------|
 | 1. Data Acquisition      | 1      | Done       | ++++|
