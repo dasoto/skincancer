@@ -102,18 +102,18 @@ model predictions can be done through the pre-trained model loaded into the iPho
   **3. Android App:** (Optional if time allow it)
 
 ### 4. Project Schedule
-| Activity    | Days     | Current Status     | Progress |
-| :------------- | :------------- | :------------- | :-------------|
+| Activity       | Days           | Current Status | Progress |
+| :------------- | :------------- | :------------- | :--------|
 | 1. Data Acquisition      | 1      | Done       | ++++|
 | 2. Initial Preprocessing and visualizations | 1| Done | ++++|
-| 3. First Model Construction and tuning | 2 | Done | ++++|
-| 4. Model Optimization I (Data augmentation) | 1 | Pending| ----|
-| 5. Model Optimization II (Transferred learning) | 2 | Pending| ----|
-| 6. Model Optimization III (Fine Tuning)| 2| Pending| ----|
+| 3. First Model Construction and tuning | 2 | Done | ++++ |
+| 4. Model Optimization I (Data augmentation) | 1 | Done | ++++ |
+| 5. Model Optimization II (Transferred learning) | 2 | Done| ++++ |
+| 6. Model Optimization III (Fine Tuning)| 2| In Progress | ++--|
 | 7. Web App Development + Backend Service | 2 | Pending| ----|
-| 8. Ios App Development | 2| In Progress| ++--|
-| 9. Android App Development | 2| Pending| ----|
-| 10. Presentation preparation | 1 | Pending| ----|
+| 8. Ios App Development | 2| In Progress| +++- |
+| 9. Android App Development | 2| Pending| ---- |
+| 10. Presentation preparation | 1 | Pending | ---- |
 
 ### 5. Tools to Use
  - Tensorflow (GPU High performance computing - NVIDIA)
