@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from keras.models import load_model
 from moleimages import MoleImages
 import tensorflow as tf
+import random
 
 
 UPLOAD_FOLDER = 'tmp'
@@ -44,6 +45,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            #os.system('rm tmp/test.png')
+            filename = 'test.' + filename.split('.')[-1]
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('predict', filename = filename))
             # return redirect(url_for('uploaded_file',
@@ -87,7 +90,7 @@ def predict(filename):
     print(y_pred.shape)
 
     #result = 'Low Risk'
-    path_to_file = '/uploads/' + filename
+    path_to_file = '/uploads/' + filename + '?' + str(random.randint(1000000,9999999))
     return render_template('index.html', image = path_to_file, scroll = 'features', data = page.format(result))
 
 
@@ -96,4 +99,4 @@ if __name__ == '__main__':
     global model
     model = load_model('models/BM_VA_VGG_FULL_DA.hdf5')
     graph = tf.get_default_graph()
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=7000, debug=True)
