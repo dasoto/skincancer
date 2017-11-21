@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Skin Moles Risk</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendor/simple-line-icons/css/simple-line-icons.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='device-mockups/device-mockups.min.css') }}">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='css/new-age.min.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Skin Moles Risk</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download">Motivation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#features">Analyze</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h2 class="mb-5">Skin Mole Risk </h2>
+              <p>The purpose of this project is to create a tool that can estimate the risk of a skin mole.</p>
+              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now</a>
+              <hr>
+              <p>In technical terms I have constructed a Convolutional Neural Network to classify images of skin moles
+                as malign or benign. For details about this project:</p>
+              <a href="https://dasoto.github.io/skincancer/" class="btn btn-outline btn-xl js-scroll-trigger">Technical Info</a>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Motivation</h2>
+            <p>Skin cancer is a common disease that affect a big amount of peoples. Some facts about skin cancer: </p>
+            <ul><li>Every year there are more new cases of skin cancer than the
+combined incidence of cancers of the breast, prostate, lung and colon.</li><br>
+<li>An estimated 87,110 new cases of invasive melanoma will be diagnosed in the U.S.
+in 2017.</li><br>
+<li>The estimated 5-year survival rate for patients whose melanoma is detected
+early is about 98 percent in the U.S. The survival rate falls to 62 percent when
+the disease reaches the lymph nodes, and 18 percent when the disease metastasizes
+to distant organs.</li>
+            </ul>
+            <div class="badges">
+              <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+              <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      {% if scroll %}
+      <script>
+          //document.getElementById('{{ scroll }}').scrollIntoView();
+          // or
+          document.location.hash = '#' + '{{ scroll }}';
+      </script>
+      {% endif %}
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>Upload image to analyze</h2>
+          <p class="text-muted">Image to analyze must be as close as sample image.
+          Be carefull with the focus because blurry images can cause wron results.</p>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 my-auto">
+            <div class="device-container">
+              <form method=post enctype=multipart/form-data action='/upload'>
+                <p><input type=file name=file>
+                   <input type=submit value=Upload>
+              </form>
+          </div>
+        </div>
+        <div class="col-lg-4 my-auto">
+          <div class="device-container">
+            <h1> Results </h1>
+            <img src="{{ image }}" alt="Mole Image" class="img-thumbnail">
+            <p> The analysis result is: {{ data }} </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact bg-primary" id="contact">
+      <div class="container">
+        <h2>Feel free to contact me thorugh:</h2>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-twitter">
+            <a href="http://www.twitter.com/andykrlz">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-facebook">
+            <a href="http://www.github.com/dasoto">
+              <i class="fa fa-github"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-google-plus">
+            <a href="#">
+              <i class="fa fa-phone"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2017 DSM.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static',filename='js/new-age.min.js') }}"></script>
+
+  </body>
+
+</html>

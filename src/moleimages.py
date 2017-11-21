@@ -50,6 +50,13 @@ class MoleImages():
 
         return np.array(X), y.reshape(len(y),1)
 
+    def load_image(self, filename, size=(128,128)):
+        self.size = size
+        img = io.imread(filename)
+        img = resize(img, self.size, mode='constant') * 255
+        if img.shape[2] == 4:
+            img = img[:,:,0:3]
+        return img.reshape(1, self.size[0], self.size[1], 3)
 
     def save_h5(self, X, filename, dataset):
         '''

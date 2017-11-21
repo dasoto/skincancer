@@ -1,20 +1,8 @@
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import load_model
-from cnn_model import CNN
 from moleimages import MoleImages
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
-
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import sys
-
-
-def plot_roc(y_test, y_score, title='ROC Curve'):
-    fpr, tpr, _ = roc_curve(y_test, y_score)
-    roc_auc = auc(fpr, tpr)
-    print(roc_auc)
 
 import matplotlib.pyplot as plt
 import sys
@@ -45,9 +33,7 @@ if __name__ == '__main__':
         X_test, y_test = mimg.load_test_images('data_scaled_test/benign',
                                                 'data_scaled_test/malign')
 
-        mycnn = CNN()
         model = load_model(sys.argv[1])
-
         y_pred_proba = model.predict(X_test)
         y_pred = (y_pred_proba >0.5)*1
         print(classification_report(y_test,y_pred))
