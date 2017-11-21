@@ -53,9 +53,9 @@ The specific datasets to use are:
 
 As summary the total images to use are:
 
-| Benign Images     | Malign Images     |
+| Benign Images  | Malign Images  |
 | :------------- | :------------- |
-| 1208       | 849       |
+| 1208           | 849            |
 
 Some sample images are shown below:
 1. Sample images of benign moles:
@@ -79,7 +79,7 @@ The idea is to develop a simple CNN model from scratch, and evaluate the perform
 1. Data augmentation: Rotations, noising, scaling to avoid overfitting
 2. Transferred Learning: Using a pre-trained network construct some additional
 layer at the end to fine tuning our model. (VGG-16, or other)
-3. Others to define.
+3. Full training of VGG-16 + additional layer.
 
 #### 2.4 Model Evaluation:
 To evaluate the different models we will use ROC Curves and AUC score. To choose
@@ -103,18 +103,18 @@ model predictions can be done through the pre-trained model loaded into the iPho
 
 ### 4. Project Schedule
 
-| Activity       | Days           | Current Status | Progress |
-| :------------- | :------------- | :------------- | :--------|
-| 1. Data Acquisition      | 1      | Done       | ++++|
-| 2. Initial Preprocessing and visualizations | 1| Done | ++++|
-| 3. First Model Construction and tuning | 2 | Done | ++++ |
-| 4. Model Optimization I (Data augmentation) | 1 | Done | ++++ |
-| 5. Model Optimization II (Transferred learning) | 2 | Done| ++++ |
-| 6. Model Optimization III (Fine Tuning)| 2| In Progress | ++--|
-| 7. Web App Development + Backend Service | 2 | Pending| ----|
-| 8. Ios App Development | 2| In Progress| +++- |
-| 9. Android App Development | 2| Pending| ---- |
-| 10. Presentation preparation | 1 | Pending | ---- |
+| Activity                                        | Days | Status      | Prog |
+| :---------------------------------------------- | :--- | :---------- | :--- |
+| 1. Data Acquisition                             | 1    | Done        | ++++ |
+| 2. Initial Preprocessing and visualizations     | 1    | Done        | ++++ |
+| 3. First Model Construction and tuning          | 2    | Done        | ++++ |
+| 4. Model Optimization I (Data augmentation)     | 1    | Done        | ++++ |
+| 5. Model Optimization II (Transferred learning) | 2    | Done        | ++++ |
+| 6. Model Optimization III (Fine Tuning)         | 2    | In Progress | +++- |
+| 7. Web App Development + Backend Service        | 2    | In Progress | +++- |
+| 8. Ios App Development                          | 2    | In Progress | +++- |
+| 9. Android App Development                      | 2    | Pending     | ---- |
+| 10. Presentation preparation                    | 1    | Pending     | ---- |
 
 ### 5. Tools to Use
  - Tensorflow (GPU High performance computing - NVIDIA)
@@ -133,6 +133,7 @@ The results obtained until now can be shown on the ROC curve presented below:
 
 ![](images/ROC%20Curve%20CNN%20from%20scratch.png?raw=true)
 ##### Classification Report CNN From scratch, CV Folder.
+
 - Model_name = models/cnn-scratch-cv.hdf5
 - 110 epochs. No early stop.
 - AUC: 0.9164
@@ -143,8 +144,9 @@ The results obtained until now can be shown on the ROC curve presented below:
 |1.0 |      0.88   |   0.86  |    0.87 |       50 |
 | avg / total |      0.87  |    0.87   |   0.87 |      100|
 
-
+#### Second Model: VGG16 + Dense Layer
 ##### Classification Report VGG16 + Dense Layer.
+
 - Model_name = models/VGG-Full.hdf5
 - 100 epochs. No early stop.
 - AUC: 0.9496
@@ -166,7 +168,9 @@ The results obtained until now can be shown on the ROC curve presented below:
 |1.0    |   0.93    |  0.80    |  0.86   |     50 |
 |avg / total|  0.88 |     0.87 |     0.87|    100  |
 
+#### Third Model: CNN + Data Augmentation
 ##### Classification Report CNN Scratch with Data Augmentation.
+
 - Model_name = models/CNN-Scratch-DA
 - 100 epochs.ModelCheckpoint. Best Val Accuracy
 - AUC: 0.9444
@@ -178,8 +182,9 @@ The results obtained until now can be shown on the ROC curve presented below:
 | 1.0   | 0.95      | 0.78    | 0.86      |   50    |
 |avg / total|0.88   | 0.87    |0.87       |100      |
 
-
+#### Fourth Model: VGG16 + Dense Layer + Data Augmentation
 ##### Classification Report VGG16 with Data Augmentation.
+
 - Model_name = models/BM_VA_VGG_FULL_DA.hdf5
 - 100 epochs.ModelCheckpoint. Best Val Accuracy
 - AUC: 0.9612
@@ -190,8 +195,6 @@ The results obtained until now can be shown on the ROC curve presented below:
 | 0.0   | 0.88      | 0.88    |  0.88     |    50   |
 | 1.0   | 0.88      | 0.88    | 0.88      |   50    |
 |avg / total|0.88   | 0.88    |0.88       |100      |
-
-
 
 
 ### 7. Next Steps
