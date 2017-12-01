@@ -53,9 +53,9 @@ The specific datasets to use are:
 
 As summary the total images to use are:
 
-| Benign Images  | Malign Images  |
-| :------------- | :------------- |
-| 1208           | 849            |
+| Benign Images  | Malignant Images  |
+| :------------- | :-----------------|
+| 1208           | 849               |
 
 Some sample images are shown below:
 1. Sample images of benign moles:
