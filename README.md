@@ -204,7 +204,7 @@ The results obtained until now can be shown on the ROC curve presented below:
 
 #### 6.1 CNN Architecture:
 
-  ![](images/Cnn_Architecture.png?raw=true)
+  ![](images/CNN_Architecture.png?raw=true)
 
   All the layers have a Relu activation function, except the last one that is sigmoid, to obtain the probability of a Malignant mole.
 
