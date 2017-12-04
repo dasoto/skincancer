@@ -110,11 +110,11 @@ model predictions can be done through the pre-trained model loaded into the iPho
 | 3. First Model Construction and tuning          | 2    | Done        | ++++ |
 | 4. Model Optimization I (Data augmentation)     | 1    | Done        | ++++ |
 | 5. Model Optimization II (Transferred learning) | 2    | Done        | ++++ |
-| 6. Model Optimization III (Fine Tuning)         | 2    | In Progress | +++- |
-| 7. Web App Development + Backend Service        | 2    | In Progress | +++- |
-| 8. Ios App Development                          | 2    | In Progress | +++- |
+| 6. Model Optimization III (Fine Tuning)         | 2    | Done        | ++++ |
+| 7. Web App Development + Backend Service        | 2    | Done        | ++++ |
+| 8. Ios App Development                          | 2    | Done        | ++++ |
 | 9. Android App Development                      | 2    | Pending     | ---- |
-| 10. Presentation preparation                    | 1    | Pending     | ---- |
+| 10. Presentation preparation                    | 1    | Done        | ++++ |
 
 ### 5. Tools to Use
  - Tensorflow (GPU High performance computing - NVIDIA)
@@ -196,6 +196,14 @@ The results obtained until now can be shown on the ROC curve presented below:
 | 1.0   | 0.88      | 0.88    | 0.88      |   50    |
 |avg / total|0.88   | 0.88    |0.88       |100      |
 
+![](images/ROC_Curve_VGG-16_Data_Augmentation.png?raw=true)
 
 ### 7. Next Steps
-TBD
+
+- Publish Ios App
+- Create Android App
+- Improve model with additional data
+
+### 8. Disclaimer
+
+This tool has been designed only for educational purposes to demonstrate the use of Machine Learning tools in the medical field. This tool does not replace advice or evaluation by a medical professional. Nothing on this site should be construed as an attempt to offer a medical opinion or practice medicine.
