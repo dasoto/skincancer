@@ -16,6 +16,7 @@ in 2017.
 early is about 98 percent in the U.S. The survival rate falls to 62 percent when
 the disease reaches the lymph nodes, and 18 percent when the disease metastasizes
 to distant organs.
+- Early detection is critical!
 
 ### 2. Development process and Data
 The idea of this project is to construct a CNN model that can predict the probability
@@ -81,6 +82,7 @@ The idea is to develop a simple CNN model from scratch, and evaluate the perform
 layer at the end to fine tuning our model. (VGG-16, or other)
 3. Full training of VGG-16 + additional layer.
 
+
 #### 2.4 Model Evaluation:
 To evaluate the different models we will use ROC Curves and AUC score. To choose
 the correct model we will evaluate the precision and accuracy to set the threshold
@@ -126,7 +128,9 @@ model predictions can be done through the pre-trained model loaded into the iPho
  - IoS swift + core ML
  - Flask
 
-### 6. Current Progress
+![](images/Tech_Stack.png?raw=true)
+
+### 6. Final Results
 #### First Model: CNN from scratch, no data augmentation
 Simple Convolutional Neural Network with 3 layers.
 The results obtained until now can be shown on the ROC curve presented below:
@@ -197,6 +201,12 @@ The results obtained until now can be shown on the ROC curve presented below:
 |avg / total|0.88   | 0.88    |0.88       |100      |
 
 ![](images/ROC_Curve_VGG-16_Data_Augmentation.png?raw=true)
+
+#### 6.1 CNN Architecture:
+
+  ![](images/Cnn_Architecture.png?raw=true)
+
+  All the layers have a Relu activation function, except the last one that is sigmoid, to obtain the probability of a Malignant mole.
 
 ### 7. Next Steps
 
